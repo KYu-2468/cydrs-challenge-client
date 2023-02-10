@@ -5,7 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+// Apollo Client to fetch domain data from graphql end-points
 const client = new ApolloClient({
+  // The URI for backend graphql end-points
   uri: "https://cydrs-server-dfxzx.ondigitalocean.app/",
   cache: new InMemoryCache(),
 });
@@ -13,6 +15,7 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <ApolloProvider client={client}>
     <App />
